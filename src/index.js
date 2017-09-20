@@ -131,7 +131,7 @@ export default class EventStoreConsumer extends EventEmitter {
                 return this.ack(event)
             }, e => {
                 //Log the error, nack the event
-                this.onError(e)
+                this.onError(e, event)
                 return this.nack(event)
             })
     }
